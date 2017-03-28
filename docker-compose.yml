@@ -1,0 +1,15 @@
+version: '2'
+services:
+  db:
+    image: mysql
+    environment:
+      - MYSQL_ALLOW_EMPTY_PASSWORD=yes
+  app:
+    build: .
+    env_file:
+      - .env
+    command: php -S 0.0.0.0:3000 -t lib
+    volumes:
+      - .:/usr/src/app
+    ports:
+      - "3000:3000"
