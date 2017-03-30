@@ -4,6 +4,10 @@
 
   cp .env.example .env
 
+编译docker-compose文件
+
+  docker-compose build
+
 启动服务
 
   docker-compose up -d
